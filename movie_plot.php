@@ -34,6 +34,7 @@ class MoviePlotGenerator {
 	 */
 	public function getPlot()
 	{
+		// Regenerate if duplicate found.
 		do {
 			$his_adjective = $this->getRandom(self::$adjectives);
 			$his_occupation = $this->getRandom(self::$occupations);
@@ -43,7 +44,6 @@ class MoviePlotGenerator {
 			$her_occupation = $this->getRandom(self::$occupations);
 			$her_quirk = $this->getRandom(self::$quirks);	
 		} 
-		// Regenerate if duplicate found.
 		while($his_adjective == $her_adjective 
 			|| $his_occupation == $her_occupation
 				|| $his_quirk == $her_quirk);	
